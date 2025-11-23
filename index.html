@@ -353,9 +353,11 @@
             align-items: center;
         }
 
+
         .about-image img {
-            max-width: 100%;
-            height: auto;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
             display: block;
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-xl);
@@ -374,15 +376,18 @@
         .about-image {
             text-align: center;
             position: relative;
+            max-width: 400px;
+            height: 300px;
+            margin: 0 auto;
         }
 
         .about-image::before {
             content: '';
             position: absolute;
-            top: -20px;
-            left: -20px;
-            right: 20px;
-            bottom: 20px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background: var(--secondary);
             border-radius: var(--radius-lg);
             z-index: -1;
@@ -1021,7 +1026,7 @@
                     <p>Durante três dias, oferecemos uma programação diversificada com palestras, atividades culturais, esportivas e serviços gratuitos para a comunidade, sempre alinhados com os Objetivos de Desenvolvimento Sustentável da ONU.</p>
                 </div>
                 <div class="about-image fade-in">
-                    <img src="Cgn2025.jpeg" alt="Imagem do Evento CGN 2025" style="max-width: 400px; width: 100%; height: auto;" />
+                    <img src="Cgn2025.jpeg" alt="Imagem do Evento CGN 2025" />
                 </div>
             </div>
         </div>
