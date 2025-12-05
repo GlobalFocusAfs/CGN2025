@@ -23,6 +23,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
 html {
@@ -31,7 +32,6 @@ html {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
     color: var(--text);
     background-color: #fff;
@@ -39,11 +39,13 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    line-height: 1.2;
+:not(#header) {
+    h1, h2, h3, h4 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
 }
 
 p {
@@ -204,14 +206,6 @@ header.scrolled {
     box-shadow: var(--shadow-lg);
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
 .logo {
     font-size: 1.8rem;
     font-weight: 800;
@@ -225,8 +219,16 @@ nav {
     align-items: center;
 }
 
-.logo span {
+.logo .site-title {
     color: var(--secondary);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 .nav-links {
@@ -392,7 +394,7 @@ nav {
     box-shadow: var(--shadow-xl);
 }
 
-@media (min-width: 992px) {
+@media (width: 992px) {
     .about-content {
         grid-template-columns: 1fr 1fr;
     }
@@ -923,16 +925,16 @@ nav {
     min-width: 200px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: var(--transition);
-}
 
-.prize-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.25);
-}
-
-.prize-card.main-prize {
-    background: rgba(245, 158, 11, 0.2);
-    border: 1px solid rgba(245, 158, 11, 0.3);
+    &:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.25);
+    }
+    
+    &.main-prize {
+        background: rgba(245, 158, 11, 0.2);
+        border: 1px solid rgba(245, 158, 11, 0.3);
+    }
 }
 
 .prize-amount {
@@ -986,11 +988,11 @@ nav {
     font-size: 1.2rem;
     padding: 18px 45px;
     box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
-}
 
-.btn-bingo:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
+    &:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
+    }
 }
 
 /* ===== CARDS DE COLABORADORES OTIMIZADOS ===== */
@@ -1018,12 +1020,12 @@ nav {
     justify-content: center;
     min-height: 220px;
     text-align: center;
-}
-
-.collaborator-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--secondary);
+    
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--secondary);
+    }
 }
 
 .collaborator-img-container {
@@ -1259,7 +1261,7 @@ footer {
     }
 }
 
-@media (max-width: 900px) {
+@media (width < 1000px) {
     .hamburger {
         display: flex;
         align-items: center;
